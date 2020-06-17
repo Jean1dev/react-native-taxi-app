@@ -8,6 +8,12 @@ io.on('connection', socket => {
     console.log('user connected', new Date())
 
     socket.on('chat message', msg => io.emit('receveid message', msg))
+
+    socket.on('book-ride', payload => {
+        io.emit('ride-request', payload)
+    })
+
+    socket.on('ride-accept', payload => console.log('ride-accept', payload))
 })
 
 server.listen(port, () => {

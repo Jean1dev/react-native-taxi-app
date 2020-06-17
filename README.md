@@ -13,6 +13,15 @@ SignIn
 
 Chat
 <img src="images/chat.png"><br>
+
+Loading
+<img src="images/loading.png"><br>
+
+Map
+<img src="images/map.png"><br>
+
+BookRide
+<img src="images/bookride.png"><br>
 </div>
 
 ## :information_source: How To Use [ BACK-END ]

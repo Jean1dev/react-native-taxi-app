@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import {
     Container,
     BlueText,
@@ -10,15 +10,32 @@ import {
     Title,
     Form
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { userContext } from '../../context/user/UserContext';
 
 const Login: React.FC = () => {
+    const { setUser } = userContext()
+    const [email, setEmail] = useState('')
+    const navigation = useNavigation()
+
+    const submit = useCallback(() => {
+        setUser({
+            email,
+            isDriver: false
+        })
+        navigation.navigate('chosePath')
+    }, [navigation, email])
+
     return (
         <Container>
             <Title>Sign In</Title>
             <Form>
                 <Label>EMAIL</Label>
-                <Input />
-                <Button>
+                <Input 
+                    value={email}
+                    onChangeText={text => setEmail(text)}
+                />
+                <Button onPress={submit}>
                     <ButtonText>Sign In</ButtonText>
                 </Button>
             </Form>

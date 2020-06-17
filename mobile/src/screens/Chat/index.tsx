@@ -15,7 +15,7 @@ import {
 } from './styles';
 import { AntDesign, Feather } from '@expo/vector-icons';
 import Message from './componentes/message';
-import useWebSocket, { MessageType } from './hooks/useWebSocket';
+import useWebSocket, { MessageType } from '../../hooks/useWebSocket';
 
 const Chat: React.FC = () => {
   const [{ messages }, setMyMessage] = useWebSocket()

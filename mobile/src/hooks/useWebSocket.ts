@@ -24,5 +24,5 @@ export default function useWebSocket(): any {
         socket.emit('chat message', msg)
     }
 
-    return [{ messages }, setMyMessage]
+    return [{ messages }, setMyMessage ]
 }
